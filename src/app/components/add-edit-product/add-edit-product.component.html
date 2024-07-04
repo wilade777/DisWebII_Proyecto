@@ -1,0 +1,36 @@
+<div class="row mt-1">
+    <div class="col-lg-4 offset-lg-4">
+    <div class="card text-white bg-success mb-3" style="max-width: 25rem;">
+        <div class="card-header text-center ">Agregar Producto</div>
+            <div class="card-body">
+             <form (ngSubmit)="addProduct()">
+             <input formControlName="name" type="text" class="form-control" placeholder="Ingrese Producto">
+             <span *ngIf="form.get('name')?.hasError('required') && form.get('name')?.touched">
+                El campo nombre es <strong>requerido</strong>
+            </span>
+             <input formControlName="description" type="text" class="form-control mt-2" placeholder="Ingrese Descripción">
+             <span *ngIf="form.get('description')?.hasError('required') && form.get('description')?.touched">
+                El campo descripcion es <strong>requerido</strong>
+             </span>
+             <input formControlName="ubicacion" type="text" class="form-control mt-2" placeholder="Ingrese Ubicación">
+             <span *ngIf="form.get('ubicacion')?.hasError('required') && form.get('ubicacion')?.touched">
+                El campo descripcion es <strong>requerido</strong>
+             </span>
+                <input formControlName="stock" type="number" class="form-control mt-2" placeholder="Ingrese Stock">
+             <span *ngIf="form.get('stock')?.hasError('required') && form.get('stock')?.touched">
+                El campo stock es <strong>requerido</strong>
+            </span>
+             <div class="row mt-2 text-center">
+                <div class="col-lg-6">
+                    <button routerLink="/" type="button" class="btn btn-secondary">Volver</button>
+                </div>
+                <div class="col-lg-6">
+                    <button type="submit" class="btn btn-primary">Aceptar</button>
+                </div>
+             </div>
+                
+             </form>
+            </div>
+      </div>
+    </div>
+</div>
